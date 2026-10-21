@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.hypothesis/
+node_modules/
+/data/
+/humanapi/static/
+ui/package-lock.json
+ui/dist/
+*.pyc

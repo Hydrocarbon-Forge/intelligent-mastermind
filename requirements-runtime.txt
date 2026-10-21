@@ -1,0 +1,4 @@
+# Heavy dependencies, needed only on the runtime machine (real tokenizer and GPU embedder).
+# Imported lazily; never required by the test suite.
+transformers
+sentence-transformers

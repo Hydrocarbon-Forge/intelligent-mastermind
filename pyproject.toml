@@ -1,0 +1,15 @@
+[project]
+name = "humanapi"
+version = "0.1.0"
+description = "Intelligent Mastermind: a local OpenAI-compatible API whose model is a person, assisted by learned memories"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+addopts = "-m 'not integration'"
+markers = [
+  "integration: needs the real inference server on port 8081 and the GPU embedder (runtime machine only)",
+  "tokenizer_files: needs the Qwen/Qwen3.8-27B tokenizer files in tokenizer.path (skipped when absent)",
+]

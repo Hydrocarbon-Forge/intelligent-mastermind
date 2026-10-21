@@ -1,0 +1,60 @@
+server:
+  host: 127.0.0.1
+  port: 8080
+  model_id: human
+  bearer_token: null
+  max_pending: 8
+backend:
+  base_url: http://127.0.0.1:8081/v1
+  model: qwen3.8-27b
+  top_k: 20
+  timeout_s: 30.0
+  capabilities_file: data/capabilities.json
+tokenizer:
+  path: data/tokenizer
+  enable_thinking: false
+embed:
+  model: Qwen/Qwen3-Embedding-0.6B
+  device: cuda
+  context_tokens: 128
+ui:
+  max_rows: 8
+  heartbeat_seconds: 15.0
+  send_key: Ctrl+Enter
+gate:
+  tau_content: 0.80
+  tau_function: 0.60
+  tau_sentence_start: 0.85
+  explore_rate: 0.05
+  max_auto_run: 40
+  cold_start_min_labels: 200
+  cold_start_base_prob: 0.95
+  abstention_margin: 0.10
+  rewind_window: 100
+  rewind_ceiling_per_100: 5.0
+  rewind_step: 0.25
+  rewind_max_boost: 1.5
+  calibration_refit_every: 50
+  lookahead_max: 8
+  autonomy: 0.0
+learning:
+  ngram_orders: [1, 2, 3]
+  ngram_alpha: 0.1
+  l2_to_init: 0.001
+  learning_rate: 0.5
+  tail_floor: 0.01
+  weight_typed_first: 1.0
+  weight_typed_continuation: 0.3
+  recent_window: 20
+  knn_k: 16
+  knn_temperature: 0.05
+  snapshot_every: 50
+  snapshots_kept: 10
+knowledge:
+  min_similarity: 0.35
+  top_chunks: 4
+  chunk_tokens: 300
+  chunk_overlap_tokens: 40
+storage:
+  db_path: data/human.db
+  index_dir: data/index

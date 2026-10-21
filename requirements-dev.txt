@@ -1,0 +1,12 @@
+# Light dependencies: everything needed to run the full test suite on a CPU-only machine.
+fastapi
+uvicorn
+websockets
+httpx
+pydantic
+numpy
+pyyaml
+pytest
+pytest-asyncio
+hypothesis
+openai
