@@ -1,0 +1,16 @@
+data: {"id":"chatcmpl-golden","object":"chat.completion.chunk","created":1760000000,"model":"human","choices":[{"index":0,"delta":{"role":"assistant","content":""},"finish_reason":null}]}
+
+: keepalive
+
+data: {"id":"chatcmpl-golden","object":"chat.completion.chunk","created":1760000000,"model":"human","choices":[{"index":0,"delta":{"content":" Hello"},"finish_reason":null}]}
+
+: keepalive
+
+data: {"id":"chatcmpl-golden","object":"chat.completion.chunk","created":1760000000,"model":"human","choices":[{"index":0,"delta":{"content":" the"},"finish_reason":null}]}
+
+: keepalive
+
+data: {"id":"chatcmpl-golden","object":"chat.completion.chunk","created":1760000000,"model":"human","choices":[{"index":0,"delta":{},"finish_reason":"stop"}]}
+
+data: [DONE]
+

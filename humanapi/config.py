@@ -1,8 +1,12 @@
 """Typed settings. The dataclass defaults mirror config.yaml; `load_config` merges a YAML file over them."""
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Optional
+import os
+from dataclasses import dataclass, field, fields, is_dataclass
+from pathlib import Path
+from typing import Any, Optional
+
+import yaml
 
 
 @dataclass
@@ -106,8 +110,42 @@ class Config:
 
 
 def load_config(path: Optional[str] = None) -> Config:
-    """Load settings from a YAML file (default: config.yaml next to the package root) over the defaults.
+    """Load settings from a YAML file over the defaults.
 
+    With no path, reads config.yaml from the current working directory when it exists, else returns the defaults.
     Unknown sections or keys raise ValueError. A missing file at an explicit path raises FileNotFoundError.
     """
-    raise NotImplementedError
+    if path is None:
+        candidate = Path.cwd() / "config.yaml"
+        if not candidate.is_file():
+            return Config()
+        path = str(candidate)
+    elif not os.path.isfile(path):
+        raise FileNotFoundError(f"config file not found: {path}")
+
+    with open(path, "r", encoding="utf-8") as fh:
+        data = yaml.safe_load(fh)
+    cfg = Config()
+    if data is None:
+        return cfg
+    if not isinstance(data, dict):
+        raise ValueError(f"config file {path} must contain a mapping at the top level")
+    _apply_overrides(cfg, data, "")
+    return cfg
+
+
+def _apply_overrides(obj: Any, data: Any, prefix: str) -> None:
+    """Set fields of a dataclass from a mapping, recursing into nested dataclass sections."""
+    if data is None:
+        data = {}
+    if not isinstance(data, dict):
+        raise ValueError(f"config section '{prefix.rstrip('.')}' must be a mapping")
+    names = {f.name for f in fields(obj)}
+    for key, value in data.items():
+        if key not in names:
+            raise ValueError(f"unknown config key: {prefix}{key}")
+        current = getattr(obj, key)
+        if is_dataclass(current):
+            _apply_overrides(current, value, f"{prefix}{key}.")
+        else:
+            setattr(obj, key, list(value) if isinstance(value, list) else value)
