@@ -8,6 +8,51 @@
 
 # Intelligent Mastermind
 
+<p align="center">
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/Hydrocarbon-Forge/intelligent-mastermind?style=social"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/forks"><img alt="forks" src="https://img.shields.io/github/forks/Hydrocarbon-Forge/intelligent-mastermind?style=social"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/watchers"><img alt="watchers" src="https://img.shields.io/github/watchers/Hydrocarbon-Forge/intelligent-mastermind?style=social"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/issues"><img alt="open issues" src="https://img.shields.io/github/issues/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/issues?q=is%3Aclosed"><img alt="closed issues" src="https://img.shields.io/github/issues-closed/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/pulls"><img alt="open pull requests" src="https://img.shields.io/github/issues-pr/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/pulls?q=is%3Apr+is%3Aclosed"><img alt="closed pull requests" src="https://img.shields.io/github/issues-pr-closed/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/commits"><img alt="last commit" src="https://img.shields.io/github/last-commit/Hydrocarbon-Forge/intelligent-mastermind"></a>
+</p>
+<p align="center">
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/commits"><img alt="commits per year" src="https://img.shields.io/github/commit-activity/Hydrocarbon-Forge/intelligent-mastermind/y"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/graphs/contributors"><img alt="contributors" src="https://img.shields.io/github/contributors/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="repo size" src="https://img.shields.io/github/repo-size/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="code size" src="https://img.shields.io/github/languages/code-size/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="top language" src="https://img.shields.io/github/languages/top/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="language count" src="https://img.shields.io/github/languages/count/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/github/license/Hydrocarbon-Forge/intelligent-mastermind"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind#readme"><img alt="README" src="https://img.shields.io/badge/README-present-2ea44f?logo=readme&logoColor=white"></a>
+</p>
+<p align="center">
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="tests" src="https://img.shields.io/badge/tests-test_files_in_repo-2ea44f"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/search?l=python"><img alt="language: Python" src="https://img.shields.io/badge/Python-language-3776AB?logo=python&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/search?l=typescript"><img alt="language: TypeScript" src="https://img.shields.io/badge/TypeScript-language-3178C6?logo=typescript&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/search?l=css"><img alt="language: CSS" src="https://img.shields.io/badge/CSS-language-1572B6?logo=css3&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/search?l=html"><img alt="language: HTML" src="https://img.shields.io/badge/HTML-language-E34F26?logo=html5&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind/blob/main/pyproject.toml"><img alt="stack: pyproject" src="https://img.shields.io/badge/pyproject-in_repo-3775A9?logo=python&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains Markdown" src="https://img.shields.io/badge/Markdown-files-000000?logo=markdown&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains JSON" src="https://img.shields.io/badge/JSON-files-000000?logo=json&logoColor=white"></a>
+</p>
+<p align="center">
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains YAML" src="https://img.shields.io/badge/YAML-files-CB171E"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains TOML" src="https://img.shields.io/badge/TOML-files-9C4121"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains gitignore" src="https://img.shields.io/badge/gitignore-files-F05032?logo=git&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains TypeScript" src="https://img.shields.io/badge/TypeScript-files-3178C6?logo=typescript&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains HTML" src="https://img.shields.io/badge/HTML-files-E34F26?logo=html5&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains CSS" src="https://img.shields.io/badge/CSS-files-1572B6?logo=css3&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains Python" src="https://img.shields.io/badge/Python-files-3776AB?logo=python&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="contains JSONL" src="https://img.shields.io/badge/JSONL-files-000000"></a>
+</p>
+<p align="center">
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="Git" src="https://img.shields.io/badge/Git-version_control-F05032?logo=git&logoColor=white"></a>
+<a href="https://github.com/Hydrocarbon-Forge/intelligent-mastermind"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-hosted-181717?logo=github&logoColor=white"></a>
+</p>
+
 A local OpenAI-compatible API whose model is a person, assisted by learned memories.
 
 Any OpenAI client sends a chat request to this server. The request waits in a queue until you pick it up in the
