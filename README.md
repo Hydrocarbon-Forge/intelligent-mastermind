@@ -1,3 +1,11 @@
+<p align="center"><b>A local OpenAI-compatible API whose model is a person, assisted by learned memories.</b></p>
+
+<p align="center">
+<a href="LICENSE"><img alt="license: MIT" src="https://img.shields.io/badge/license-MIT-blue"></a>
+</p>
+
+---
+
 # Intelligent Mastermind
 
 A local OpenAI-compatible API whose model is a person, assisted by learned memories.
@@ -5,7 +13,9 @@ A local OpenAI-compatible API whose model is a person, assisted by learned memor
 Any OpenAI client sends a chat request to this server. The request waits in a queue until you pick it up in the
 browser UI. For each token the program proposes candidates from a local language model, your learned memories
 (an n-gram memory of your own choices, a kNN index over context embeddings, and a personal scorer) and your notes.
-Confident positions are filled in automatically; the rest are asked. Your decisions are streamed back to the
+Confident positions are filled in automatically, including the end of the message: when the program is
+confident the reply is complete, it sends it without asking. The rest are asked, plus a small share
+(`gate.explore_rate`) that are asked on purpose to keep the confidence estimate honest. Your decisions are streamed back to the
 client, and every decision is logged and used to learn.
 
 ## Architecture
@@ -32,6 +42,22 @@ python3 -m venv .venv
 .venv/bin/pip install -r requirements-runtime.txt    # runtime extras: transformers, sentence-transformers
 cd ui && npm install && npm run build && cd ..       # writes the UI into humanapi/static
 ```
+
+### GPU (embedder)
+
+The embedder (`Qwen/Qwen3-Embedding-0.6B`) runs on the GPU when `embed.device` is `cuda` or `auto` (the default:
+`auto` uses the GPU when PyTorch can see one, otherwise the CPU). Install a CUDA build of PyTorch **before** the
+runtime requirements. An RTX 50-series card (5080, 5090, ...) needs CUDA 12.8 or newer:
+
+```sh
+.venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cu130   # NVIDIA driver 580 or newer
+# older driver (570 or newer): use https://download.pytorch.org/whl/cu128 instead
+.venv/bin/pip install -r requirements-runtime.txt
+.venv/bin/python -m tools.check_device     # prints: embedder: cuda (NVIDIA GeForce RTX 5080, sm_120, ...)
+```
+
+Plain `pip install torch` gives a CPU-only build on Windows. `./start.sh` runs the same check and refuses to start
+when `embed.device` is `cuda` but PyTorch cannot use the card, with the install command in the message.
 
 Put the Qwen tokenizer files in the folder named by `tokenizer.path` (default `data/tokenizer`).
 Without them the server does not start; the error names `tokenizer.path`.
@@ -94,7 +120,7 @@ default in `humanapi/config.py`; an unknown key is an error.
 - `backend`: `base_url` (the inference server), `model`, `top_k` (at most 20), `timeout_s`,
   `capabilities_file`.
 - `tokenizer`: `path`, `enable_thinking` (kept false).
-- `embed`: `model`, `device`, `context_tokens`.
+- `embed`: `model`, `device` (`auto`, `cuda` or `cpu`), `context_tokens`.
 - `ui`: `max_rows` (candidate rows shown), `heartbeat_seconds`, `send_key`.
 - `gate`: thresholds per group (`tau_content`, `tau_function`, `tau_sentence_start`), `explore_rate`,
   `max_auto_run`, `cold_start_min_labels`, rewind controller settings, `lookahead_max`, `autonomy`.
